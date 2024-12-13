@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Heart, ShoppingCart, MapPin, ChevronDown, Menu, Truck } from 'lucide-react';
-
+import LogoW from './assets/Logo-w.png'
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -49,21 +49,21 @@ const Header = () => {
             </button>
 
             <a href="/" className="text-2xl font-bold">
-              Avito
+              <div className='p-2 rounded-md bg-[#2A43D4]'><img className='w-28' src={LogoW} alt="" /></div>
             </a>
 
-            <button className="hidden md:flex items-center px-4 py-2 bg-blue-500 text-white rounded-l-md">
+            <button className="hidden md:flex items-center px-4 py-2 bg-blue-500 text-white rounded-md">
               <Menu className="h-5 w-5 mr-2" />
               Все категории
             </button>
 
-            <div className="flex-1 relative">
+            <div className="flex-1 border border-blue-500 rounded-2xl relative">
               <input
                 type="text"
                 placeholder="Поиск по объявлениям"
-                className="w-full px-4 py-2 border rounded-md md:rounded-l-none"
+                className="w-full border-blue-500 px-4 py-2 border !rounded-2xl outline-none md:rounded-l-none"
               />
-              <button className="absolute right-0 top-0 h-full px-4 bg-blue-500 text-white rounded-r-md">
+              <button className="absolute right-0 top-0 h-full px-4 !rounded-r-2xl bg-blue-500 text-white ">
                 Найти
               </button>
             </div>
@@ -99,7 +99,7 @@ const Header = () => {
             </a>
             <a href="#" className="flex items-center gap-2 min-w-max text-sm text-gray-700">
               <span className="p-1 bg-gray-100 rounded">🛍️</span>
-              Авито Молл
+              Vositachi Молл
             </a>
           </div>
         </div>
@@ -183,6 +183,7 @@ const CategoryGrid = () => {
               <img
                 src={category.image}
                 alt={category.title}
+                loading='lazy'
                 className="object-cover w-full h-full"
               />
             </div>
