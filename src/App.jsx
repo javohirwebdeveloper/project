@@ -285,7 +285,7 @@ const RecommendationCard = ({ item }) => {
             ))}
             {plusImg && (
               <div className="absolute flex justify-center items-center h-full w-full bg-[#00000088] z-10">
-                <span className=" text-2xl text-white">
+                <span className=" text-center text-2xl text-white">
                   Ещё <br /> {additionalImagesCount} фото
                 </span>
               </div>
