@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Search, Heart, ShoppingCart, MapPin, ChevronDown, Menu, Truck } from 'lucide-react';
-import LogoW from './assets/Logo-w.png'
+import LogoW from './assets/Logo-w.png';
+
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -129,42 +131,42 @@ const Header = () => {
 const categories = [
   {
     title: 'Авто',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_1.png',
     href: '#'
   },
   {
     title: 'Недвижимость',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_4_v2.png',
     href: '#'
   },
   {
     title: 'Работа',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_110_new_2.png',
     href: '#'
   },
   {
     title: 'Одежда, обувь, аксессуары',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_27.png',
     href: '#'
   },
   {
     title: 'Хобби и отдых',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_7.png',
     href: '#'
   },
   {
     title: 'Животные',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_35.png',
     href: '#'
   },
   {
     title: 'Готовый бизнес и оборудование',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_8_v2.png',
     href: '#'
   },
   {
     title: 'Электроника',
-    image: '/placeholder.svg?height=150&width=150',
+    image: 'https://www.avito.st/s/avito/components/visual_rubricator/156x90/cat_6.png',
     href: '#'
   }
 ];
@@ -174,148 +176,63 @@ const CategoryGrid = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {categories.map((category) => (
-          <a
+          <div
             key={category.title}
             href={category.href}
-            className="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            className="group relative w-[100px] h-[90px] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="aspect-square relative">
+            <div className=" absolute bottom-0">
               <img
                 src={category.image}
                 alt={category.title}
                 loading='lazy'
-                className="object-cover w-full h-full"
+                className="h-[90px] !w-[156px]"
               />
             </div>
             <div className="p-4">
-              <h3 className="text-sm font-medium text-gray-900 group-hover:text-blue-500">
+              <h3 className="text-xs font-medium text-gray-900 group-hover:text-blue-500">
                 {category.title}
               </h3>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-const promoItems = [
-  {
-    title: 'Новогодние скидки',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: '#яПомогаю',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: 'Помогайте покупая',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: 'Игра Авито и МЧС',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: 'Участвовать в олимпиаде',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: 'Зимние кроссовки',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: 'Бордовый — цвет сезона',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  },
-  {
-    title: 'Нетоксичное общение',
-    image: '/placeholder.svg?height=120&width=120',
-    href: '#'
-  }
-];
 
-const PromoScroll = () => {
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex overflow-x-auto gap-4 pb-4">
-        {promoItems.map((item) => (
-          <a
-            key={item.title}
-            href={item.href}
-            className="flex-none w-[120px] group"
-          >
-            <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-red-100 group-hover:border-red-200">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <p className="mt-2 text-xs text-center text-gray-900">
-              {item.title}
-            </p>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-};
 
-const recommendations = [
-  {
-    id: 1,
-    title: 'Брендовые пакеты guess',
-    price: '200 ₽',
-    image: '/placeholder.svg?height=200&width=200',
-    hasDelivery: true
-  },
-  {
-    id: 2,
-    title: 'Резинка для волос Dior',
-    price: '335 ₽',
-    originalPrice: '500 ₽',
-    discount: '-33%',
-    image: '/placeholder.svg?height=200&width=200',
-    hasDelivery: true
-  },
-  {
-    id: 3,
-    title: 'Пакеты и Упаковка louis vuitton оригинал',
-    price: '1 000 ₽',
-    image: '/placeholder.svg?height=200&width=200',
-    hasDelivery: true
-  },
-  {
-    id: 4,
-    title: 'Брендовые пакеты karl lagerfeld',
-    price: '215 ₽',
-    image: '/placeholder.svg?height=200&width=200',
-    hasDelivery: true
-  }
-];
+
 
 const RecommendationCard = ({ item }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
+  const [imghover, setImghover] = useState(false);
 
+  // Limit to 5 images
+  const displayedImages = item.images.slice(0, 5);
+  const additionalImagesCount = item.images.length - 5;
+ const [plusImg, setPlusImg] = useState(false)
   return (
     <div className="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-      <div className="relative aspect-square">
+      <div
+        onMouseEnter={() => {
+          if (item.images.length !== 1) {
+            setImghover(true);
+          }
+        }}
+        onMouseLeave={() => setImghover(false)}
+        className="relative cursor-pointer aspect-square"
+      >
         <img
-          src={item.image}
-          alt={item.title}
           className="w-full h-full object-cover"
+          src={item.images[activeImage]}
+          alt={item.title}
         />
         <button
           onClick={() => setIsFavorite(!isFavorite)}
-          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+          className="absolute top-2 right-2 z-50 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
         >
           <Heart
             className={`h-5 w-5 ${
@@ -327,6 +244,53 @@ const RecommendationCard = ({ item }) => {
           <span className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-sm font-medium rounded">
             {item.discount}
           </span>
+        )}
+
+        {imghover && (
+          <div
+            className={`grid px-2 w-full absolute bottom-0 h-full left-1/2 transform -translate-x-1/2 grid-rows-1 ${
+              item.images.length === 1
+                ? 'grid-cols-1'
+                : item.images.length === 2
+                ? 'grid-cols-2'
+                : item.images.length === 3
+                ? 'grid-cols-3'
+                : item.images.length === 4
+                ? 'grid-cols-4'
+                : item.images.length === 5
+                ? 'grid-cols-5'
+                : 'grid-cols-5'
+            } gap-1 w-full`}
+          >
+            {displayedImages.map((_, index) => (
+              <div
+                key={index}
+                onMouseEnter={() => {setActiveImage(index)
+                  if(index == 4){
+                    setPlusImg(true)
+                  }
+                }}
+                onMouseLeave={() => {setActiveImage(0)
+                  setPlusImg(false)
+                }}
+                className="relative z-20"
+              >
+                <div
+                  className={`h-[2px] w-full bottom-2 absolute transition-all rounded-full duration-200 ${
+                    activeImage === index ? 'bg-blue-500' : 'bg-gray-300'
+                  }`}
+                  style={{ flexGrow: 1 }}
+                ></div>
+              </div>
+            ))}
+            {plusImg && (
+              <div className="absolute flex justify-center items-center h-full w-full bg-[#00000088] z-10">
+                <span className=" text-2xl text-white">
+                  ещё {additionalImagesCount} фото
+                </span>
+              </div>
+            )}
+          </div>
         )}
       </div>
       <div className="p-3">
@@ -352,7 +316,52 @@ const RecommendationCard = ({ item }) => {
   );
 };
 
+
+
 const Recommendations = () => {
+  const recommendations = [
+  {
+    id: 1,
+    title: 'Брендовые пакеты guess',
+    price: '200 ₽',
+    images: ['https://80.img.avito.st/image/1/1.b-xH0baDwwUpcRkEFeBN901zwQP1ZscF9QGiCeuqwt_ycsEH73I.a9NFydL2GgD38_4NRvtZ-JHReMwChdNfp41ssJqFAqY'],
+    hasDelivery: true
+  },
+  {
+    id: 2,
+    title: 'Резинка для волос Dior',
+    price: '335 ₽',
+    originalPrice: '500 ₽',
+    discount: '-33%',
+    images: ['https://20.img.avito.st/image/1/1.0OdNpLaDfA4jBKYPYcOogGQFfgj_E3gO_3QdAuHffdT4B34M5Qc.b_XD_B1BNZw7ULO5TITeA6hgWo7IBjUyLISu5793PRA',
+      'https://80.img.avito.st/image/1/1.VLqJI7aD-FOfg1pSrUoRn5-C-lU7lPxTO_OZXyUg-fE8gPpRIYA.P6ufvgfKUhhJfhQ5KlSxcOKVZYPQZL8nmt6JZiFw_Ek'
+    ],
+    hasDelivery: true
+  },
+  {
+    id: 3,
+    title: 'Пакеты и Упаковка louis vuitton оригинал',
+    price: '1 000 ₽',
+    images: ['https://30.img.avito.st/image/1/1.BwOEkLaDq-rqMHHrhqAoZrAyqew2J6_qNkDK5ijrqjAxM6noLDM.PQknNptkP3JWRk1tIq7_i978Y-xMLgTc6xp2-MS545U'],
+    hasDelivery: true
+  },
+  {
+    id: 4,
+    title: 'Брендовые пакеты karl lagerfeld',
+    price: '215 ₽',
+    images: ['https://80.img.avito.st/image/1/1.VLqJI7aD-FPngyJSrUoRn5-C-lU7lPxTO_OZXyVY-Yk8gPpRIYA.TVlMWkiT9fip00NLk21EKAJ6EKxC1jzqgTFf45sSdJQ',
+      'https://20.img.avito.st/image/1/1.T7X1NLaD41zjlEFd52VRq-aV4VpHg-dcR-SCUFk34v5Al-FeXZc.yjAkS1E-T0KwzCkw-P6ONYENbX8VybeMByFrKyyFqvo',
+      'https://10.img.avito.st/image/1/1.VjhnQ7a8-tFx41jQR1IvEbHg_NfF5vrXooP2yXHjWNDR4PjN0Q.cnnKoSue7zKp8CESxjOQVebRt1crMARLlprojM8K7Dc',
+      'https://30.img.avito.st/image/1/1.W21NuLaD94RbGFWFd40CClwZ9YL_D_OE_2iWiOG79ib4G_WG5Rs.tKd24FZHvhFlMWbVBVi5kImBW_iBjwW2mZZnviaMCcY',
+      'https://00.img.avito.st/image/1/1.B4JxVLaDq2tn9Alqc2x_6G32qW3D469rw4TKZ91XqsnE96lp2fc.b4TqoR5jKzFPKKM7yQm7va3I6G7FWlaQQF22E2Kk7-w',
+      "https://40.img.avito.st/image/1/1.XF3DILaD8LTVgFK193VQINSB8rJxl_S0cfCRuG8j8RZ2g_K2a4M.phvzad0Y_5sNQG4WNkipp2ths4QSIZKpWiDTdlj5C-g",
+      'https://00.img.avito.st/image/1/1.B4JxVLaDq2tn9Alqc2x_6G32qW3D469rw4TKZ91XqsnE96lp2fc.b4TqoR5jKzFPKKM7yQm7va3I6G7FWlaQQF22E2Kk7-w',
+    ],
+    hasDelivery: true
+  }
+];
+
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-xl font-bold mb-6">Рекомендации для вас</h2>
@@ -407,7 +416,6 @@ const App = () => {
       <Header />
       <div className="flex-1">
         <CategoryGrid />
-        <PromoScroll />
         <Recommendations />
       </div>
       <Footer />
